@@ -1,0 +1,14 @@
+<div class="card-container" *ngIf="vakis$ | async as vakis">
+  <div
+    class="card"
+    *ngFor="let vaki of vakis"
+    [routerLink]="['/vaki', vaki.uid]"
+  >
+    <p>
+      {{ vaki.name }}
+    </p>
+  </div>
+</div>
+<div class="card-container">
+  <button class="card" (click)="createVaki()" color="green">CREAR VAKI</button>
+</div>
